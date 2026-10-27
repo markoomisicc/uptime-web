@@ -1,0 +1,20 @@
+{
+  "login": {
+    "title": "Log in",
+    "email": "Email",
+    "password": "Password",
+    "submit": "Log in"
+  },
+  "dashboard": {
+    "welcome": "Welcome"
+  },
+  "header": {
+    "language": "Language",
+    "logout": "Log out"
+  },
+  "errors": {
+    "invalid_credentials": "Invalid email or password",
+    "internal_error": "Something went wrong. Please try again.",
+    "unknown": "Something went wrong. Please try again."
+  }
+}

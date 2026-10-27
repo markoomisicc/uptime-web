@@ -1,4 +1,13 @@
 <header>
   <span>{{ user().first_name }} {{ user().last_name }}</span>
-  <button type="button" (click)="logout.emit()">Log out</button>
+
+  <label>
+    {{ 'header.language' | transloco }}
+    <select [value]="user().language" (change)="onLanguageChange($event)">
+      <option value="en">English</option>
+      <option value="de">Deutsch</option>
+    </select>
+  </label>
+
+  <button type="button" (click)="logout.emit()">{{ 'header.logout' | transloco }}</button>
 </header>

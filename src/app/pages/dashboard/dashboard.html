@@ -1,7 +1,4 @@
 @if (user(); as user) {
-  <app-header [user]="user" (logout)="onLogout()" />
-
-  <main>
-    <h1>Welcome, {{ user.first_name }}</h1>
-  </main>
+  <app-header [user]="user" (logout)="onLogout()" (languageChange)="onLanguageChange($event)" />
+  <app-welcome [name]="user.first_name" />
 }

@@ -1,0 +1,20 @@
+{
+  "login": {
+    "title": "Anmelden",
+    "email": "E-Mail",
+    "password": "Passwort",
+    "submit": "Anmelden"
+  },
+  "dashboard": {
+    "welcome": "Willkommen"
+  },
+  "header": {
+    "language": "Sprache",
+    "logout": "Abmelden"
+  },
+  "errors": {
+    "invalid_credentials": "Ungültige E-Mail-Adresse oder ungültiges Passwort",
+    "internal_error": "Etwas ist schiefgelaufen. Bitte versuche es erneut.",
+    "unknown": "Etwas ist schiefgelaufen. Bitte versuche es erneut."
+  }
+}
