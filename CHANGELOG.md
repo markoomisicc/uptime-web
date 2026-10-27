@@ -12,3 +12,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Development proxy forwarding `/api` requests to the backend
 - Login page with session-based authentication
 - Protected dashboard with logout
+
+### Changelog
+
+- Centralized API endpoint definitions
