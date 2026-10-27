@@ -12,7 +12,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Development proxy forwarding `/api` requests to the backend
 - Login page with session-based authentication
 - Protected dashboard with logout
+- English and German translations with Transloco
+- Language switcher, saved to the user's account
 
-### Changelog
+### Changed
 
 - Centralized API endpoint definitions
+- Login and dashboard split into page and presentational components

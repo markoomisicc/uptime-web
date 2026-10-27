@@ -1,3 +1,5 @@
+export type LanguageCode = 'en' | 'de';
+
 export interface User {
   id: string;
   email: string;
@@ -6,6 +8,7 @@ export interface User {
   last_name: string;
   phone: string | null;
   timezone: string;
+  language: LanguageCode;
   email_verified: boolean;
   created_at: string;
 }
