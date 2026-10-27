@@ -3,6 +3,7 @@ import { Injectable, computed, inject, signal } from '@angular/core';
 import { Observable, catchError, of, tap } from 'rxjs';
 
 import { User } from '../models/user';
+import { API } from '../api/endpoints';
 
 @Injectable({ providedIn: 'root' })
 export class Auth {
@@ -12,7 +13,7 @@ export class Auth {
   readonly isLoggedIn = computed(() => this.user() !== null);
 
   loadCurrentUser(): Observable<User | null> {
-    return this.http.get<User>('/api/auth/me').pipe(
+    return this.http.get<User>(API.auth.me).pipe(
       tap((user) => this.user.set(user)),
       catchError(() => {
         this.user.set(null);
@@ -23,13 +24,13 @@ export class Auth {
 
   login(email: string, password: string): Observable<User> {
     return this.http
-      .post<User>('/api/auth/login', { email, password })
+      .post<User>(API.auth.login, { email, password })
       .pipe(tap((user) => this.user.set(user)));
   }
 
   logout(): Observable<void> {
     return this.http
-      .post<void>('/api/auth/logout', {})
+      .post<void>(API.auth.logout, {})
       .pipe(tap(() => this.user.set(null)));
   }
 }
