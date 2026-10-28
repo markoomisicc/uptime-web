@@ -14,6 +14,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Protected dashboard with logout
 - English and German translations with Transloco
 - Language switcher, saved to the user's account
+- Registration page with field-level validation errors
+- Email verification flow: check email page, verification page and resending the email
 
 ### Changed
 

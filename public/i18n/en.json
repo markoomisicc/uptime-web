@@ -3,7 +3,35 @@
     "title": "Log in",
     "email": "Email",
     "password": "Password",
-    "submit": "Log in"
+    "submit": "Log in",
+    "no_account": "Don't have an account?",
+    "register_link": "Sign up"
+  },
+  "register": {
+    "title": "Create account",
+    "first_name": "First name",
+    "last_name": "Last name",
+    "email": "Email",
+    "username": "Username",
+    "password": "Password",
+    "phone": "Phone (optional)",
+    "submit": "Create account",
+    "has_account": "Already have an account?",
+    "login_link": "Log in"
+  },
+  "check_email": {
+    "title": "Check your email",
+    "description": "We sent a confirmation link to",
+    "hint": "Click the link in the email to activate your account. If you can't find it, check your spam folder.",
+    "resend": "Resend email",
+    "resend_in": "Resend in",
+    "sent": "A new email has been sent.",
+    "back_to_login": "Back to login"
+  },
+  "verify_email": {
+    "verifying": "Verifying your email address…",
+    "failed_title": "Verification failed",
+    "back_to_login": "Back to login"
   },
   "dashboard": {
     "welcome": "Welcome"
@@ -12,8 +40,38 @@
     "language": "Language",
     "logout": "Log out"
   },
+  "fieldErrors": {
+    "first_name": {
+      "required": "First name is required",
+      "too_long": "First name must be at most 100 characters"
+    },
+    "last_name": {
+      "required": "Last name is required",
+      "too_long": "Last name must be at most 100 characters"
+    },
+    "email": {
+      "required": "Email is required",
+      "invalid": "Enter a valid email address",
+      "taken": "This email is already registered"
+    },
+    "username": {
+      "required": "Username is required",
+      "invalid": "Use 3–30 letters, numbers, _ or -",
+      "taken": "This username is already taken"
+    },
+    "password": {
+      "required": "Password is required",
+      "invalid_length": "Password must be 8–72 characters"
+    },
+    "phone": {
+      "invalid": "Use international format, e.g. +385911234567"
+    }
+  },
   "errors": {
     "invalid_credentials": "Invalid email or password",
+    "email_not_verified": "Please confirm your email address first",
+    "invalid_token": "This verification link is invalid or has expired.",
+    "too_many_requests": "Too many requests. Please wait a moment.",
     "internal_error": "Something went wrong. Please try again.",
     "unknown": "Something went wrong. Please try again."
   }

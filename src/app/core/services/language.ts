@@ -18,6 +18,10 @@ export class Language {
     return navigator.language.toLowerCase().startsWith('de') ? 'de' : 'en';
   }
 
+  current(): LanguageCode {
+    return this.transloco.getActiveLang() as LanguageCode;
+  }
+
   translateError(err: HttpErrorResponse): string {
     const code: string | undefined = err.error?.error;
     const message: string | undefined = err.error?.message;

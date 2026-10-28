@@ -18,4 +18,9 @@
   <button type="submit" [disabled]="form.invalid || loading()">
     {{ 'login.submit' | transloco }}
   </button>
+
+  <p>
+    {{ 'login.no_account' | transloco }}
+    <a routerLink="/register">{{ 'login.register_link' | transloco }}</a>
+  </p>
 </form>

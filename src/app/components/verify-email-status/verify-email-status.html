@@ -1,0 +1,9 @@
+<section>
+  @if (error(); as error) {
+    <h1>{{ 'verify_email.failed_title' | transloco }}</h1>
+    <p class="error">{{ error }}</p>
+    <a routerLink="/login">{{ 'verify_email.back_to_login' | transloco }}</a>
+  } @else {
+    <p>{{ 'verify_email.verifying' | transloco }}</p>
+  }
+</section>

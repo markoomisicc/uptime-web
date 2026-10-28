@@ -1,6 +1,7 @@
 import { Component, inject, input, output } from '@angular/core';
 import { NonNullableFormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 import { TranslocoPipe } from '@jsverse/transloco';
+import { RouterLink } from '@angular/router';
 
 export interface LoginCredentials {
   email: string;
@@ -9,7 +10,7 @@ export interface LoginCredentials {
 
 @Component({
   selector: 'app-login-form',
-  imports: [ReactiveFormsModule, TranslocoPipe],
+  imports: [ReactiveFormsModule, TranslocoPipe, RouterLink],
   templateUrl: './login-form.html',
   styleUrl: './login-form.scss',
 })

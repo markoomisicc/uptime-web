@@ -1,0 +1,25 @@
+<form [formGroup]="form" (ngSubmit)="submit()" novalidate>
+  <h1>{{ 'register.title' | transloco }}</h1>
+
+  @for (field of fields; track field.name) {
+    <label>
+      {{ 'register.' + field.name | transloco }}
+      <input [type]="field.type" [formControlName]="field.name" [attr.autocomplete]="field.autocomplete" />
+    </label>
+
+    @if (errorCode(field.name); as code) {
+      <p class="field-error">{{ 'fieldErrors.' + field.name + '.' + code | transloco }}</p>
+    }
+  }
+
+  @if (error()) {
+    <p class="error">{{ error() }}</p>
+  }
+
+  <button type="submit" [disabled]="loading()">{{ 'register.submit' | transloco }}</button>
+
+  <p>
+    {{ 'register.has_account' | transloco }}
+    <a routerLink="/login">{{ 'register.login_link' | transloco }}</a>
+  </p>
+</form>

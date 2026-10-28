@@ -1,0 +1,27 @@
+<section>
+  <h1>{{ 'check_email.title' | transloco }}</h1>
+
+  <p>
+    {{ 'check_email.description' | transloco }}
+    <strong>{{ email() }}</strong>
+  </p>
+  <p>{{ 'check_email.hint' | transloco }}</p>
+
+  @if (sent()) {
+    <p class="success">{{ 'check_email.sent' | transloco }}</p>
+  }
+
+  @if (error()) {
+    <p class="error">{{ error() }}</p>
+  }
+
+  <button type="button" (click)="resend.emit()" [disabled]="sending() || cooldown() > 0 || !email()">
+    @if (cooldown() > 0) {
+      {{ 'check_email.resend_in' | transloco }} {{ cooldown() }}s
+    } @else {
+      {{ 'check_email.resend' | transloco }}
+    }
+  </button>
+
+  <a routerLink="/login">{{ 'check_email.back_to_login' | transloco }}</a>
+</section>
