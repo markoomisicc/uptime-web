@@ -3,7 +3,7 @@ import { Injectable, computed, inject, signal } from '@angular/core';
 import { Observable, catchError, of, tap } from 'rxjs';
 
 import { API } from '../api/endpoints';
-import { LanguageCode, User } from '../models/user';
+import { LanguageCode, RegisterData, User } from '../models/user';
 import { Language } from './language';
 
 @Injectable({ providedIn: 'root' })
@@ -22,6 +22,20 @@ export class Auth {
         return of(null);
       }),
     );
+  }
+
+  register(data: RegisterData): Observable<User> {
+    return this.http.post<User>(API.auth.register, data);
+  }
+
+  verifyEmail(token: string): Observable<User> {
+    return this.http
+      .post<User>(API.auth.verifyEmail, { token })
+      .pipe(tap((user) => this.setUser(user)));
+  }
+
+  resendVerification(email: string): Observable<void> {
+    return this.http.post<void>(API.auth.resendVerification, { email });
   }
 
   login(email: string, password: string): Observable<User> {

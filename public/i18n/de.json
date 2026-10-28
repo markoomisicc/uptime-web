@@ -3,7 +3,35 @@
     "title": "Anmelden",
     "email": "E-Mail",
     "password": "Passwort",
-    "submit": "Anmelden"
+    "submit": "Anmelden",
+    "no_account": "Noch kein Konto?",
+    "register_link": "Registrieren"
+  },
+  "register": {
+    "title": "Konto erstellen",
+    "first_name": "Vorname",
+    "last_name": "Nachname",
+    "email": "E-Mail",
+    "username": "Benutzername",
+    "password": "Passwort",
+    "phone": "Telefon (optional)",
+    "submit": "Konto erstellen",
+    "has_account": "Du hast schon ein Konto?",
+    "login_link": "Anmelden"
+  },
+  "check_email": {
+    "title": "Prüfe deine E-Mails",
+    "description": "Wir haben einen Bestätigungslink gesendet an",
+    "hint": "Klicke auf den Link in der E-Mail, um dein Konto zu aktivieren. Wenn du sie nicht findest, schau in deinem Spam-Ordner nach.",
+    "resend": "E-Mail erneut senden",
+    "resend_in": "Erneut senden in",
+    "sent": "Eine neue E-Mail wurde gesendet.",
+    "back_to_login": "Zurück zur Anmeldung"
+  },
+  "verify_email": {
+    "verifying": "Deine E-Mail-Adresse wird bestätigt…",
+    "failed_title": "Bestätigung fehlgeschlagen",
+    "back_to_login": "Zurück zur Anmeldung"
   },
   "dashboard": {
     "welcome": "Willkommen"
@@ -12,8 +40,38 @@
     "language": "Sprache",
     "logout": "Abmelden"
   },
+  "fieldErrors": {
+    "first_name": {
+      "required": "Vorname ist erforderlich",
+      "too_long": "Vorname darf höchstens 100 Zeichen lang sein"
+    },
+    "last_name": {
+      "required": "Nachname ist erforderlich",
+      "too_long": "Nachname darf höchstens 100 Zeichen lang sein"
+    },
+    "email": {
+      "required": "E-Mail-Adresse ist erforderlich",
+      "invalid": "Gib eine gültige E-Mail-Adresse ein",
+      "taken": "Diese E-Mail-Adresse ist bereits registriert"
+    },
+    "username": {
+      "required": "Benutzername ist erforderlich",
+      "invalid": "Verwende 3–30 Buchstaben, Zahlen, _ oder -",
+      "taken": "Dieser Benutzername ist bereits vergeben"
+    },
+    "password": {
+      "required": "Passwort ist erforderlich",
+      "invalid_length": "Das Passwort muss 8–72 Zeichen lang sein"
+    },
+    "phone": {
+      "invalid": "Verwende das internationale Format, z. B. +385911234567"
+    }
+  },
   "errors": {
     "invalid_credentials": "Ungültige E-Mail-Adresse oder ungültiges Passwort",
+    "email_not_verified": "Bitte bestätige zuerst deine E-Mail-Adresse",
+    "invalid_token": "Dieser Bestätigungslink ist ungültig oder abgelaufen.",
+    "too_many_requests": "Zu viele Anfragen. Bitte warte einen Moment.",
     "internal_error": "Etwas ist schiefgelaufen. Bitte versuche es erneut.",
     "unknown": "Etwas ist schiefgelaufen. Bitte versuche es erneut."
   }

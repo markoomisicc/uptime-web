@@ -26,7 +26,12 @@ export class Login {
 
     this.auth.login(email, password).subscribe({
       next: () => this.router.navigateByUrl('/dashboard'),
-      error: (err: HttpErrorResponse) => {
+            error: (err: HttpErrorResponse) => {
+        if (err.error?.error === 'email_not_verified') {
+          this.router.navigate(['/check-email'], { queryParams: { email } });
+          return;
+        }
+
         this.error.set(this.language.translateError(err));
         this.loading.set(false);
       },
