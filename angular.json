@@ -29,7 +29,12 @@
                 "input": "public"
               }
             ],
-            "styles": ["src/styles.scss"]
+            "styles": [
+              "@fontsource/instrument-sans/400.css",
+              "@fontsource/instrument-sans/500.css",
+              "@fontsource/instrument-sans/600.css",
+              "src/styles.scss"
+            ]
           },
           "configurations": {
             "production": {

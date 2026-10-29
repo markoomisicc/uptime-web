@@ -8,13 +8,23 @@
     "register_link": "Sign up"
   },
   "register": {
-    "title": "Create account",
+    "title": "Create your account",
+    "subtitle": "Get alerted the moment your site goes down.",
     "first_name": "First name",
     "last_name": "Last name",
     "email": "Email",
     "username": "Username",
     "password": "Password",
     "phone": "Phone (optional)",
+    "show_password": "Show password",
+    "hide_password": "Hide password",
+    "confirm_password": "Confirm password",
+    "phone_country": "Country code",
+    "hints": {
+      "username": "Letters, numbers, _ and -",
+      "password": "8 to 72 characters",
+      "phone": "Used only for SMS alerts"
+    },
     "submit": "Create account",
     "has_account": "Already have an account?",
     "login_link": "Log in"
@@ -63,8 +73,12 @@
       "required": "Password is required",
       "invalid_length": "Password must be 8–72 characters"
     },
+    "confirm_password": {
+      "required": "Please confirm your password",
+      "mismatch": "Passwords don't match"
+    },
     "phone": {
-      "invalid": "Use international format, e.g. +385911234567"
+      "invalid": "Enter a valid phone number"
     }
   },
   "errors": {
@@ -74,5 +88,9 @@
     "too_many_requests": "Too many requests. Please wait a moment.",
     "internal_error": "Something went wrong. Please try again.",
     "unknown": "Something went wrong. Please try again."
+  },
+  "languages": {
+    "en": "English",
+    "de": "German"
   }
 }

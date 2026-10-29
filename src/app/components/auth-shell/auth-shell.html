@@ -1,0 +1,5 @@
+<app-status-backdrop />
+<app-public-header [language]="language()" (languageChange)="languageChange.emit($event)" />
+<main class="content">
+  <ng-content />
+</main>
