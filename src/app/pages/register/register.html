@@ -1,6 +1,9 @@
-<app-register-form
-  [loading]="loading()"
-  [error]="error()"
-  [serverErrors]="serverErrors()"
-  (submitted)="onSubmit($event)"
-/>
+<app-auth-shell [language]="activeLanguage()" (languageChange)="onLanguageChange($event)">
+  <app-register-form
+    [language]="activeLanguage()"
+    [loading]="loading()"
+    [error]="error()"
+    [serverErrors]="serverErrors()"
+    (submitted)="onSubmit($event)"
+  />
+</app-auth-shell>

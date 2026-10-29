@@ -21,3 +21,4 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Centralized API endpoint definitions
 - Login and dashboard split into page and presentational components
+- Redesigned registration page with animated background, language switcher, password confirmation and country code selection

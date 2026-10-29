@@ -8,13 +8,23 @@
     "register_link": "Registrieren"
   },
   "register": {
-    "title": "Konto erstellen",
+    "title": "Erstelle dein Konto",
+    "subtitle": "Erfahre sofort, wenn deine Website ausfällt.",
     "first_name": "Vorname",
     "last_name": "Nachname",
     "email": "E-Mail",
     "username": "Benutzername",
     "password": "Passwort",
     "phone": "Telefon (optional)",
+    "show_password": "Passwort anzeigen",
+    "hide_password": "Passwort verbergen",
+    "confirm_password": "Passwort bestätigen",
+    "phone_country": "Ländervorwahl",
+    "hints": {
+      "username": "Buchstaben, Zahlen, _ und -",
+      "password": "8 bis 72 Zeichen",
+      "phone": "Wird nur für SMS-Benachrichtigungen verwendet"
+    },
     "submit": "Konto erstellen",
     "has_account": "Du hast schon ein Konto?",
     "login_link": "Anmelden"
@@ -63,8 +73,12 @@
       "required": "Passwort ist erforderlich",
       "invalid_length": "Das Passwort muss 8–72 Zeichen lang sein"
     },
+    "confirm_password": {
+      "required": "Bitte bestätige dein Passwort",
+      "mismatch": "Die Passwörter stimmen nicht überein"
+    },
     "phone": {
-      "invalid": "Verwende das internationale Format, z. B. +385911234567"
+      "invalid": "Gib eine gültige Telefonnummer ein"
     }
   },
   "errors": {
@@ -74,5 +88,9 @@
     "too_many_requests": "Zu viele Anfragen. Bitte warte einen Moment.",
     "internal_error": "Etwas ist schiefgelaufen. Bitte versuche es erneut.",
     "unknown": "Etwas ist schiefgelaufen. Bitte versuche es erneut."
+  },
+  "languages": {
+    "en": "Englisch",
+    "de": "Deutsch"
   }
 }

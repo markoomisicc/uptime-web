@@ -2,13 +2,15 @@ import { HttpErrorResponse } from '@angular/common/http';
 import { Component, inject, signal } from '@angular/core';
 import { Router } from '@angular/router';
 
+import { AuthShell } from '../../components/auth-shell/auth-shell';
 import { RegisterForm, RegisterFormValue } from '../../components/register-form/register-form';
+import { LanguageCode } from '../../core/models/user';
 import { Auth } from '../../core/services/auth';
 import { Language } from '../../core/services/language';
 
 @Component({
   selector: 'app-register',
-  imports: [RegisterForm],
+  imports: [AuthShell, RegisterForm],
   templateUrl: './register.html',
   styleUrl: './register.scss',
 })
@@ -17,9 +19,15 @@ export class Register {
   private readonly router = inject(Router);
   private readonly language = inject(Language);
 
+  readonly activeLanguage = this.language.active;
+
   readonly loading = signal(false);
   readonly error = signal<string | null>(null);
   readonly serverErrors = signal<Record<string, string>>({});
+
+  onLanguageChange(language: LanguageCode): void {
+    this.language.set(language);
+  }
 
   onSubmit(value: RegisterFormValue): void {
     this.loading.set(true);

@@ -10,7 +10,6 @@ export const appConfig: ApplicationConfig = {
     provideBrowserGlobalErrorListeners(),
     provideRouter(routes, withComponentInputBinding()),
     provideHttpClient(),
-    provideHttpClient(),
     provideTransloco({
       config: {
         availableLangs: ['en', 'de'],

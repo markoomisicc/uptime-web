@@ -1,25 +1,84 @@
-<form [formGroup]="form" (ngSubmit)="submit()" novalidate>
-  <h1>{{ 'register.title' | transloco }}</h1>
+<section class="card" aria-labelledby="register-title">
+  <h1 id="register-title">{{ 'register.title' | transloco }}</h1>
+  <p class="subtitle">{{ 'register.subtitle' | transloco }}</p>
 
-  @for (field of fields; track field.name) {
-    <label>
-      {{ 'register.' + field.name | transloco }}
-      <input [type]="field.type" [formControlName]="field.name" [attr.autocomplete]="field.autocomplete" />
-    </label>
+  <form [formGroup]="form" (ngSubmit)="submit()" class="form" novalidate>
+    @for (field of fields; track field.name) {
+      @let code = errorCode(field.name);
 
-    @if (errorCode(field.name); as code) {
-      <p class="field-error">{{ 'fieldErrors.' + field.name + '.' + code | transloco }}</p>
+      <div class="field" [class.field--half]="field.half">
+        <label [for]="field.name">{{ 'register.' + field.name | transloco }}</label>
+
+        @if (field.name === 'phone') {
+          <div class="phone">
+            <select formControlName="phone_country" [attr.aria-label]="'register.phone_country' | transloco">
+              @for (country of countries(); track country.code) {
+                <option [value]="country.code">{{ country.name }} +{{ country.dialCode }}</option>
+              }
+            </select>
+            <input
+              id="phone"
+              type="tel"
+              formControlName="phone"
+              autocomplete="tel-national"
+              [attr.aria-invalid]="code ? true : null"
+              aria-describedby="phone-message"
+            />
+          </div>
+        } @else {
+          <div [class.password]="field.name === 'password'">
+            <input
+              [id]="field.name"
+              [type]="inputType(field)"
+              [formControlName]="field.name"
+              [attr.autocomplete]="field.autocomplete"
+              [attr.aria-invalid]="code ? true : null"
+              [attr.aria-describedby]="field.name + '-message'"
+            />
+
+            @if (field.name === 'password') {
+              <button
+                type="button"
+                (click)="showPassword.set(!showPassword())"
+                [attr.aria-pressed]="showPassword()"
+                [attr.aria-label]="(showPassword() ? 'register.hide_password' : 'register.show_password') | transloco"
+              >
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true">
+                  <path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12z" />
+                  <circle cx="12" cy="12" r="3" />
+                  @if (showPassword()) {
+                    <path d="M4 4l16 16" stroke-linecap="round" />
+                  }
+                </svg>
+              </button>
+            }
+          </div>
+        }
+
+        <p class="message" [class.error]="code" [id]="field.name + '-message'">
+          @if (code) {
+            {{ 'fieldErrors.' + field.name + '.' + code | transloco }}
+          } @else if (field.hint) {
+            {{ 'register.hints.' + field.name | transloco }}
+          }
+        </p>
+      </div>
     }
-  }
 
-  @if (error()) {
-    <p class="error">{{ error() }}</p>
-  }
+    @if (error()) {
+      <p class="form-error" role="alert">{{ error() }}</p>
+    }
 
-  <button type="submit" [disabled]="loading()">{{ 'register.submit' | transloco }}</button>
+    <button type="submit" class="button-primary" [disabled]="loading()" [attr.aria-busy]="loading()">
+      @if (loading()) {
+        <span class="spinner" aria-hidden="true"></span>
+      }
+      {{ 'register.submit' | transloco }}
+    </button>
+  </form>
 
-  <p>
+  <p class="foot">
     {{ 'register.has_account' | transloco }}
     <a routerLink="/login">{{ 'register.login_link' | transloco }}</a>
   </p>
-</form>
+</section>
